@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	Title="Pelicula"
+	x:Class="BlockBuster.MovieDetailPage">
+
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Local:MovieInCartConverter x:Key="MovieInCart"></Local:MovieInCartConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+	<ContentPage.Content>
+
+		<StackLayout Spacing="0" Padding="10,10,10,10">
+			<StackLayout Orientation="Horizontal">
+				<Image Source="{Binding Movie.PosterUrl}" HorizontalOptions="FillAndExpand" HeightRequest="150" WidthRequest="80" Aspect="AspectFill" />
+
+				<StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+					<Label Text="{Binding Movie.Title}" FontSize="17" FontAttributes="Bold" HorizontalOptions="Start" />
+					<Label Text="{Binding Movie.VoteAverage, StringFormat='Puntaje: {0}'}" FontSize="16" HorizontalOptions="Start" />
+					<Label Text="{Binding Movie.Price, StringFormat='${0}'}" FontSize="18" FontAttributes="Bold" TextColor="Green" />
+					<Button Text="{Binding MovieOnCart, Converter={StaticResource MovieInCart}}" Command="{Binding AddToCartCommand}" Style="{StaticResource ActionButton}" VerticalOptions="EndAndExpand" HorizontalOptions="Start" HeightRequest="38" />
+					
+				</StackLayout>
+				
+			</StackLayout>
+
+			<Label Text="{Binding Movie.Overview}" Margin="0,10,0,0" FontSize="16" />
+
+		</StackLayout>
+		
+	</ContentPage.Content>
+</Local:ContentPageBase>

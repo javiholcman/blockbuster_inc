@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	Title="Registro"
+ 	x:Class="BlockBuster.SignupPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Ok" Order="Primary" Priority="0" Command="{Binding SaveCommand}" />
+	</ContentPage.ToolbarItems>
+	
+	<ContentPage.Content>
+
+		<TableView x:Name="TableView" Margin="0,20,0,0" RowHeight="65" HorizontalOptions="Center" WidthRequest="260" VerticalOptions="FillAndExpand" HeightRequest="200"  BackgroundColor="White">
+			<TableView.Root>
+				<TableSection>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Nombre de usuario" HorizontalOptions="Center" />
+							<Entry Text="{Binding Username}" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>					
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Nombre" HorizontalOptions="Center" />
+							<Entry Text="{Binding FirstName}" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Apellido" HorizontalOptions="Center" />
+							<Entry Text="{Binding LastName}" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Email" HorizontalOptions="Center" />
+							<Entry Text="{Binding Email}" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>
+				</TableSection>
+				<TableSection>	
+					<ViewCell>
+						<ContentView></ContentView>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Password" HorizontalOptions="Center" />
+							<Entry Text="{Binding Password}" IsPassword="true" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>
+					<ViewCell>
+						<StackLayout>
+							<Label Text="Confirmacion" HorizontalOptions="Center" />
+							<Entry Text="{Binding RePassword}" IsPassword="true" HorizontalOptions="Center" WidthRequest="200" />
+						</StackLayout>
+					</ViewCell>
+				</TableSection>
+			</TableView.Root>
+		</TableView>		
+		
+	</ContentPage.Content>
+</Local:ContentPageBase>

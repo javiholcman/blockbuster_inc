@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	Title="Perfil"
+	x:Class="BlockBuster.ProfilePage">
+	<ContentPage.Content>
+		<StackLayout HorizontalOptions="FillAndExpand" Padding="10,10,10,10">
+			<Image x:Name="ImgPhoto" Aspect="AspectFill" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" Source="profile_placeholder" />
+			<Button x:Name="BtnPhoto" HorizontalOptions="Center" BackgroundColor="Transparent" Text="Sacar Foto" Clicked="BtnPhoto_Clicked" />
+			
+			<Label Text="{Binding User.Username}" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" HorizontalTextAlignment="Center" Margin="0,15,0,0" />
+			<Label Text="{Binding User.FullName}" FontSize="18" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+			<Label Text="{Binding User.Email}" FontSize="16" TextColor="Gray" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+			<Button Text="Logout" Command="{Binding LogoutCommand}" Style="{StaticResource ActionButton}" VerticalOptions="EndAndExpand" Margin="0,0,0,20" />
+		</StackLayout>
+	</ContentPage.Content>
+</Local:ContentPageBase>

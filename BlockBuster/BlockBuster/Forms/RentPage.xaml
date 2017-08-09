@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	Title="Escanear"
+	x:Class="BlockBuster.RentPage">
+	<ContentPage.Content>
+		<StackLayout Margin="15,15,15,15">
+			<Label Text="Podes agregar al carrito la pelicula escaneando su codigo QR" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+			<Button Clicked="BtnScann_Clicked" Text="Escanear" Style="{StaticResource ActionButton}" HorizontalOptions="CenterAndExpand" Margin="0,30,0,0" />
+		</StackLayout>
+	</ContentPage.Content>
+</Local:ContentPageBase>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	Title="Pelicula"
+	x:Name="MyPage"
+	x:Class="BlockBuster.CartPage">
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <Local:InvertConverter x:Key="Invert"></Local:InvertConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Enviar" Command="{Binding SendCartCommand}" />
+    </ContentPage.ToolbarItems>
+	
+	
+	<ContentPage.Content>
+
+		<StackLayout Spacing="0">
+			<StackLayout BackgroundColor="Silver" HeightRequest="40">
+				<Label Text="{Binding Subtotal, StringFormat='Elementos en su carrito: ${0}'}" IsVisible="{Binding IsEmpty, Converter={StaticResource Invert}}" FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+				<Label Text="Su carrito esta vacio" IsVisible="{Binding IsEmpty}" FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+			</StackLayout>
+			<ListView RowHeight="60" ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal" BackgroundColor="White">
+								<Image Source="{Binding PosterUrl}" WidthRequest="60" HeightRequest="60" Aspect="AspectFill" />
+								<Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" Margin="0,2,0,0" VerticalTextAlignment="Center" />
+								<Button Image="remove" Clicked="BtnRemove_Clicked" CommandParameter="{Binding .}" BindingContext="{Binding .}" HorizontalOptions="EndAndExpand" Margin="0,0,15,0" VerticalOptions="CenterAndExpand" HeightRequest="35" WidthRequest="35" BackgroundColor="Transparent" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			
+		</StackLayout>		
+		
+	</ContentPage.Content>
+</Local:ContentPageBase>

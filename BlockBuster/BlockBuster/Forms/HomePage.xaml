@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+	Title="Home"
+	x:Class="BlockBuster.HomePage">
+	<ContentPage.Content>
+
+		<StackLayout Spacing="0">
+
+			<ListView x:Name="LvMovies" RowHeight="80" ItemsSource="{Binding TopRatedMovies}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal" BackgroundColor="White">
+								<Image Source="{Binding PosterUrl}" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+								<StackLayout Spacing="0" VerticalOptions="Center">
+									<Label Text="{Binding Title}" FontSize="16" FontAttributes="Bold" Margin="0,2,0,0" />
+									<Label Text="{Binding Popularity, StringFormat='Popularidad: {0}'}" FontSize="14" TextColor="Gray" />
+									<Label Text="{Binding Votes, StringFormat='Votos: {0}'}" FontSize="14" TextColor="Gray" />
+								</StackLayout>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			
+		</StackLayout>
+		
+	</ContentPage.Content>
+</Local:ContentPageBase>

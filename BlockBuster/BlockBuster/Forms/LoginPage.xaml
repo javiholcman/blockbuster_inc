@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Local:ContentPageBase 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:Local="clr-namespace:BlockBuster" 
+	x:Class="BlockBuster.LoginPage"
+	Title="Block Buster">
+	<ContentPage.Content>
+
+		<ScrollView>
+			<StackLayout WidthRequest="200" HorizontalOptions="Center" Padding="0,30,0,0">
+				<Label Text="Usuario" HorizontalOptions="Center" FontSize="15" />
+				<Entry Text="{Binding Username}" />
+				<Label Text="Password" HorizontalOptions="Center" FontSize="15" Margin="0,20,0,0" />
+				<Entry Text="{Binding Password}" IsPassword="true" />
+
+				<Button Text="Entrar" Command="{Binding LoginCommand}" Style="{StaticResource ActionButton}" HorizontalOptions="Center" Margin="0,30,0,0" />
+				<Button Text="Registrar" Command="{Binding SignupCommand}" Style="{StaticResource SecondaryButton}" HorizontalOptions="Center" Margin="0,5,0,0" />
+			</StackLayout>
+		</ScrollView>
+		
+	</ContentPage.Content>
+</Local:ContentPageBase>

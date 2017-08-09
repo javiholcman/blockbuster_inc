@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BlockBuster.App">
+	<Application.Resources>
+
+        <ResourceDictionary>
+			
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#3526b1" />
+				<Setter Property="BarTextColor" Value="#ffab00" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="#eeeeee" />
+				<Setter Property="HeightRequest" Value="32" />
+				<Setter Property="TextColor" Value="#5f5f5f" />
+            </Style>
+			
+            <Style x:Key="ActionButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="#ffab00" />
+				<Setter Property="BackgroundColor" Value="#3525b0" />
+				<Setter Property="HeightRequest" Value="40" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="WidthRequest" Value="150" />
+            </Style>
+
+            <Style x:Key="SecondaryButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="#636363" />
+				<Setter Property="BackgroundColor" Value="Transparent" />
+				<Setter Property="HeightRequest" Value="35" />
+				<Setter Property="WidthRequest" Value="150" />
+            </Style>			
+        </ResourceDictionary>
+		
+	</Application.Resources>
+</Application>
